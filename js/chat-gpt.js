@@ -1,3 +1,4 @@
+let apiKey;
 const userLanguageDropdown = document.querySelector('#user-language');
 const translateLanguageDropdown = document.querySelector('#translate-language');
 const confirmImg = document.querySelector('#confirm-img');
