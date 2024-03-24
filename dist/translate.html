@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeTranslater</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <!-- <link rel="stylesheet" href="reset.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://kit.fontawesome.com/1a72bf9d1c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav>
+        <img class="logo-img" src="../img/cypher-logo.png" alt="cypher-logo">
+        <p class="title">Translater</p>
+        <div class="back-btn-underline">
+            <a href="index.html">Back to home</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="modal-screen">
+            <div class="modal-inner-wrapper">
+                <h1>Cypher helps you identify errors and convert your code into whatever language will help move your projects forward.</h1>
+                <textarea class="textBox" id='validation-code' type="text" placeholder="Please enter message" required></textarea>
+                <div class="validation-btn-wrap" id="validation-btn-wrap">
+                    <div class="dropdown-wrapper">
+                        <select class="dropdown" id="user-language">
+                            <option value="HTML5">HTML5</option>
+                            <option value="CSS3">CSS3</option>
+                            <option value="JS">JS</option>
+                            <option value="Java">Java</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Tailwind">Tailwind</option>
+                            <option value="SASS">SASS</option>
+                            <option value="Bootstrap">Bootstrap</option>
+                        </select>
+                        <button class="" id="validation-btn">Validate<i class="icon fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+                <div class="btn-grp" id="btn-grp">
+                    <div class="btn-grp-wrapper">
+                        <button id="accept-btn">Accept</button>
+                        <button id="keep-btn">Ignore</button>
+                        <button id="retry-btn">Retry</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <div class="main-screen">
+            <div class="grid">
+                <div class="inner-wrapper col-12 col-5-lg">
+                    <div class="textBox">
+                        <div class="lang-display">
+                            <p>Translate from:</p>
+                        </div>    
+                        <textarea id='userInput' type="text"></textarea>
+                    </div>
+                </div>
+                <div class="inner-wrapper col-12 col-2-lg">
+                    <img src="../img/check-round.svg" alt="check-confirmed-icon" id="confirm-img">
+                </div>
+                <div class="inner-wrapper col-12 col-5-lg">
+                    <div class="textBox" id="chat-card-item">
+                        <div class="lang-display">
+                            <p>Translate to:</p>
+                        </div>
+                        <div id="output"></div>
+                    </div>
+                </div>
+                <div class="dropdown-wrapper">
+                    <select class="dropdown" id="translate-language">
+                        <option value="" disabled selected>Choose another language</option>
+                        <option value="HTML5">HTML5</option>
+                        <option value="CSS3">CSS3</option>
+                        <option value="JS">JS</option>
+                        <option value="Java">Java</option>
+                        <option value="PHP">PHP</option>
+                        <option value="Tailwind">Tailwind</option>
+                        <option value="SASS">SASS</option>
+                        <option value="Bootstrap">Bootstrap</option>
+                    </select>
+                    <button class="" id="translate-btn">Translate</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>MDIA-QA-Final Project</footer>
+    <script type="module" src="../js/chat-gpt.js"></script>
+</body>
+</html>
