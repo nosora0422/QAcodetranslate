@@ -1,3 +1,8 @@
+@import "./grid";
+@import "./variables";
+@import "./mixins";
+
+
 @mixin google-font($family) {
     @import url("http://fonts.googleapis.com/css?family=#{$family}");
   }
@@ -5,92 +10,11 @@
 @include google-font("Intel");
 @include google-font("Krona One");
 
-$background-color: rgba(42,42,42,1);
-$text-color: rgba(255,255,255,1);
-$text-color-onWhite: rgba(0,0,0,1);
-$input-bg-dark: rgba(93,93,93,1);
-$input-bg-light: rgba(217,217,217,1);
-$accent-color: rgba(187,239,74,1);
-
-$title-font: 'Krona One', sans-serif;
-$heading-font: 'Krona One', sans-serif;
-$body-font: 'Intel', sans-serif; 
-
-$title-font-size: 1rem;
-$button-font-size: 1rem;
-$body-font-size: 1rem;
-$heading-font-size: 1rem;
-$dropdown-font-size: 1rem;
-
-
-$breakpoints: (
-  sm: 568px,
-  md: 834px,
-  lg: 1080px,
-);
-
-.col-1 { grid-column: span 1; }
-.col-2 { grid-column: span 2; }
-.col-3 { grid-column: span 3; }
-.col-4 { grid-column: span 4; }
-.col-5 { grid-column: span 5; }
-.col-6 { grid-column: span 6; }
-.col-7 { grid-column: span 7; }
-.col-8 { grid-column: span 8; }
-.col-9 { grid-column: span 9; }
-.col-10 { grid-column: span 10; }
-.col-11 { grid-column: span 11; }
-.col-12 { grid-column: span 12; }
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
-@mixin inputBox($width){
-    width: $width;
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    border-radius: 10px;
-}
-
-@mixin flexbox($direction, $justify, $align){
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify,;
-    align-items: $align;
-}
-
-
-@mixin inputBox ($color){
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    border-radius: 10px;
-    background-color: $color;
-    color: $text-color;
-    margin: 25px 0;
-
-    .lang-display{
-        border-bottom: 1px solid #000000;
-        padding: 16px;
-    }
-    
-    p{
-        color: $text-color-onWhite;
-    }
-}
-
-.grid{
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 1.3rem;
-    width: 100%;
-}
-
 
 body{
     background-color: $background-color;
@@ -280,53 +204,6 @@ footer{
     text-align: center;
     padding: 16px 0 ;
     border-top: 0.5px solid #adadad;
-}
-
-@media screen and (min-width: 568px) {
-
-    .col-1-sm { grid-column: span 1; }
-    .col-2-sm { grid-column: span 2; }
-    .col-3-sm { grid-column: span 3; }
-    .col-4-sm { grid-column: span 4; }
-    .col-5-sm { grid-column: span 5; }
-    .col-6-sm { grid-column: span 6; }
-    .col-7-sm { grid-column: span 7; }
-    .col-8-sm { grid-column: span 8; }
-    .col-9-sm { grid-column: span 9; }
-    .col-10-sm { grid-column: span 10; }
-    .col-11-sm { grid-column: span 11; }
-    .col-12-sm { grid-column: span 12; }
-
-}
-
-@media screen and (min-width: 834px) {
-    .col-1-md { grid-column: span 1; }
-    .col-2-md { grid-column: span 2; }
-    .col-3-md { grid-column: span 3; }
-    .col-4-md { grid-column: span 4; }
-    .col-5-md { grid-column: span 5; }
-    .col-6-md { grid-column: span 6; }
-    .col-7-md { grid-column: span 7; }
-    .col-8-md { grid-column: span 8; }
-    .col-9-md { grid-column: span 9; }
-    .col-10-md { grid-column: span 10; }
-    .col-11-md { grid-column: span 11; }
-    .col-12-md { grid-column: span 12; }
-
-}
-@media screen and (min-width: 1080px) {
-    .col-1-lg { grid-column: span 1; }
-    .col-2-lg { grid-column: span 2; }
-    .col-3-lg { grid-column: span 3; }
-    .col-4-lg { grid-column: span 4; }
-    .col-5-lg { grid-column: span 5; }
-    .col-6-lg { grid-column: span 6; }
-    .col-7-lg { grid-column: span 7; }
-    .col-8-lg { grid-column: span 8; }
-    .col-9-lg { grid-column: span 9; }
-    .col-10-lg { grid-column: span 10; }
-    .col-11-lg { grid-column: span 11; }
-    .col-12-lg { grid-column: span 12; }
 }
 
 /*# sourceMappingURL=main.css.map */

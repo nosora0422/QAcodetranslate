@@ -1,5 +1,12 @@
 @import url("http://fonts.googleapis.com/css?family=Intel");
 @import url("http://fonts.googleapis.com/css?family=Krona One");
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.3rem;
+  width: 100%;
+}
+
 .col-1 {
   grid-column: span 1;
 }
@@ -48,17 +55,124 @@
   grid-column: span 12;
 }
 
+@media screen and (min-width: 568px) {
+  .col-1-sm {
+    grid-column: span 1;
+  }
+  .col-2-sm {
+    grid-column: span 2;
+  }
+  .col-3-sm {
+    grid-column: span 3;
+  }
+  .col-4-sm {
+    grid-column: span 4;
+  }
+  .col-5-sm {
+    grid-column: span 5;
+  }
+  .col-6-sm {
+    grid-column: span 6;
+  }
+  .col-7-sm {
+    grid-column: span 7;
+  }
+  .col-8-sm {
+    grid-column: span 8;
+  }
+  .col-9-sm {
+    grid-column: span 9;
+  }
+  .col-10-sm {
+    grid-column: span 10;
+  }
+  .col-11-sm {
+    grid-column: span 11;
+  }
+  .col-12-sm {
+    grid-column: span 12;
+  }
+}
+@media screen and (min-width: 834px) {
+  .col-1-md {
+    grid-column: span 1;
+  }
+  .col-2-md {
+    grid-column: span 2;
+  }
+  .col-3-md {
+    grid-column: span 3;
+  }
+  .col-4-md {
+    grid-column: span 4;
+  }
+  .col-5-md {
+    grid-column: span 5;
+  }
+  .col-6-md {
+    grid-column: span 6;
+  }
+  .col-7-md {
+    grid-column: span 7;
+  }
+  .col-8-md {
+    grid-column: span 8;
+  }
+  .col-9-md {
+    grid-column: span 9;
+  }
+  .col-10-md {
+    grid-column: span 10;
+  }
+  .col-11-md {
+    grid-column: span 11;
+  }
+  .col-12-md {
+    grid-column: span 12;
+  }
+}
+@media screen and (min-width: 1080px) {
+  .col-1-lg {
+    grid-column: span 1;
+  }
+  .col-2-lg {
+    grid-column: span 2;
+  }
+  .col-3-lg {
+    grid-column: span 3;
+  }
+  .col-4-lg {
+    grid-column: span 4;
+  }
+  .col-5-lg {
+    grid-column: span 5;
+  }
+  .col-6-lg {
+    grid-column: span 6;
+  }
+  .col-7-lg {
+    grid-column: span 7;
+  }
+  .col-8-lg {
+    grid-column: span 8;
+  }
+  .col-9-lg {
+    grid-column: span 9;
+  }
+  .col-10-lg {
+    grid-column: span 10;
+  }
+  .col-11-lg {
+    grid-column: span 11;
+  }
+  .col-12-lg {
+    grid-column: span 12;
+  }
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 1.3rem;
-  width: 100%;
 }
 
 body {
@@ -284,118 +398,4 @@ footer {
   border-top: 0.5px solid #adadad;
 }
 
-@media screen and (min-width: 568px) {
-  .col-1-sm {
-    grid-column: span 1;
-  }
-  .col-2-sm {
-    grid-column: span 2;
-  }
-  .col-3-sm {
-    grid-column: span 3;
-  }
-  .col-4-sm {
-    grid-column: span 4;
-  }
-  .col-5-sm {
-    grid-column: span 5;
-  }
-  .col-6-sm {
-    grid-column: span 6;
-  }
-  .col-7-sm {
-    grid-column: span 7;
-  }
-  .col-8-sm {
-    grid-column: span 8;
-  }
-  .col-9-sm {
-    grid-column: span 9;
-  }
-  .col-10-sm {
-    grid-column: span 10;
-  }
-  .col-11-sm {
-    grid-column: span 11;
-  }
-  .col-12-sm {
-    grid-column: span 12;
-  }
-}
-@media screen and (min-width: 834px) {
-  .col-1-md {
-    grid-column: span 1;
-  }
-  .col-2-md {
-    grid-column: span 2;
-  }
-  .col-3-md {
-    grid-column: span 3;
-  }
-  .col-4-md {
-    grid-column: span 4;
-  }
-  .col-5-md {
-    grid-column: span 5;
-  }
-  .col-6-md {
-    grid-column: span 6;
-  }
-  .col-7-md {
-    grid-column: span 7;
-  }
-  .col-8-md {
-    grid-column: span 8;
-  }
-  .col-9-md {
-    grid-column: span 9;
-  }
-  .col-10-md {
-    grid-column: span 10;
-  }
-  .col-11-md {
-    grid-column: span 11;
-  }
-  .col-12-md {
-    grid-column: span 12;
-  }
-}
-@media screen and (min-width: 1080px) {
-  .col-1-lg {
-    grid-column: span 1;
-  }
-  .col-2-lg {
-    grid-column: span 2;
-  }
-  .col-3-lg {
-    grid-column: span 3;
-  }
-  .col-4-lg {
-    grid-column: span 4;
-  }
-  .col-5-lg {
-    grid-column: span 5;
-  }
-  .col-6-lg {
-    grid-column: span 6;
-  }
-  .col-7-lg {
-    grid-column: span 7;
-  }
-  .col-8-lg {
-    grid-column: span 8;
-  }
-  .col-9-lg {
-    grid-column: span 9;
-  }
-  .col-10-lg {
-    grid-column: span 10;
-  }
-  .col-11-lg {
-    grid-column: span 11;
-  }
-  .col-12-lg {
-    grid-column: span 12;
-  }
-}
 /*# sourceMappingURL=main.css.map */

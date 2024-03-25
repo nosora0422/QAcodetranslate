@@ -1,0 +1,35 @@
+@mixin inputBox($width){
+    width: $width;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    border-radius: 10px;
+}
+
+@mixin flexbox($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify,;
+    align-items: $align;
+}
+
+
+@mixin inputBox ($color){
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 50vh;
+    border-radius: 10px;
+    background-color: $color;
+    color: $text-color;
+    margin: 25px 0;
+
+    .lang-display{
+        border-bottom: 1px solid #000000;
+        padding: 16px;
+    }
+    
+    p{
+        color: $text-color-onWhite;
+    }
+}
