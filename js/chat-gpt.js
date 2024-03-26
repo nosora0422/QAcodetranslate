@@ -1,4 +1,4 @@
-// const apiKey = ;
+// const apiKey = '';
 const userLanguageDropdown = document.querySelector('#user-language');
 const translateLanguageDropdown = document.querySelector('#translate-language');
 const confirmImg = document.querySelector('#confirm-img');
@@ -33,6 +33,8 @@ async function getValidate() {
 
     originalInput = valInput.value;
 
+    console.log(firstOption);
+
     const options = {
         method: 'POST',
         headers: {
@@ -40,11 +42,11 @@ async function getValidate() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-                model: "gpt-3.5-turbo",
+                model: "gpt-3.5-turbo-instruct",
                 messages: [
                   {
                     role: "system",
-                    content: `This is ${firstOption}. Can you validate ${valInput.value}? please show me only the code whether or not correted and comment where you changed? Please display when code is correct as well.`
+                    content: `Can you detect what language this code was written in and debug ${valInput.value}? On return, if there are no errors, return just the word true. If there is an error, tell me what language it was. If there are errors, show only the new output with inline comments on what was changed in exclusively ${firstOption}. Remove any markdown`
                   }
                 ],
                 max_tokens: 1000
@@ -80,7 +82,7 @@ async function getMessage() {
                 messages: [
                   {
                     role: "system",
-                    content: `This is ${firstOption}. Can you translate ${inputContent.value} in ${secondOption}? `
+                    content: `Can you translate any code in ${inputContent.value} to ${secondOption}? `
                   }
                 ],
                 max_tokens: 1000
