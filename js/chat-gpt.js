@@ -13,7 +13,7 @@ const valInput = document.querySelector("#validation-code");
 const valBtnWrap = document.querySelector('#validation-btn-wrap');
 const btnWrap = document.querySelector('#btn-grp');
 const acceptBtn = document.querySelector('#accept-btn');
-const keepBtn = document.querySelector('#keep-btn');
+const keepBtn = document.querySelector('#keep-btn'); 
 const modal = document.querySelector('.modal-screen');
 
 

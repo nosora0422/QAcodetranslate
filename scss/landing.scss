@@ -1,3 +1,33 @@
-a {
-    color: red;
+@import "./grid";
+@import "./variables";
+@import "./mixins";
+
+$lang-indicator-size: 15px;
+
+body {
+    color: $text-color;
+}
+
+.lang-select-container {
+
+    @include flexbox(row, space-between, center);
+
+    li {
+        list-style-type: none;
+    }
+}
+
+.lang-select {
+    position: relative;
+}
+
+.lang-select::after {
+    content: " ";
+    position: absolute;
+    left: calc(($lang-indicator-size * -1) - 5px);
+    top: 0;
+    background-color: white;
+    height: $lang-indicator-size;
+    width: $lang-indicator-size;
+    border-radius: $lang-indicator-size;
 }
