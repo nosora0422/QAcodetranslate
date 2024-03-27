@@ -2,32 +2,184 @@
 @import "./variables";
 @import "./mixins";
 
-$lang-indicator-size: 15px;
+$lang-indicator-size: 12px;
+$slide-width: 225px;
+$animationSpeed: 60s;
+
+$lang-colours: (
+    html: #C4501E,
+    css: #4577EB,
+    js: #F0DB4F,
+    php: #8993BE,
+    python: #FFD342,
+    cplus: #00599C
+);
+
+$lang-bg-colours: (
+    html: #E76A4D,
+    css: #264DE4,
+    js: #323330,
+    php: #333A63,
+    python: #3673A5,
+    cplus: #659AD2
+);
+
 
 body {
     color: $text-color;
+    font-family: $body-font;
+}
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(($slide-width + 10px) * -6))}
+}
+
+
+.slider {
+	height: fit-content;
+	margin: auto;
+	overflow:hidden;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+	width: 100%;
+	
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: calc(($slide-width + 10px) * 12);
+
+        @each $slide, $colour in $lang-bg-colours {
+            .#{$slide} {
+              background-color: $colour;
+            }
+        }
+	}
+	
+	.slide {
+		@include heightWidth($slide-width, $slide-width, null);
+        @include flexbox(column, space-evenly, center);
+        margin: 10px;
+        background-color: gray;
+        font-size: 20px;
+
+        @each $slide, $colour in $lang-colours {
+            .#{$slide} {
+              background-color: $colour;
+            }
+        }
+
+        .circle {
+            @include heightWidth(125px, 125px, 125px);
+            // background-color: white;
+        }
+	}
 }
 
 .lang-select-container {
 
-    @include flexbox(row, space-between, center);
+    @include flexbox(row, center, center);
+    margin-top: 20px;
 
-    li {
-        list-style-type: none;
+    button {
+        color: $text-color;
     }
 }
 
 .lang-select {
-    position: relative;
+    @include flexbox(row, center, center);
+
+    @each $lang, $colour in $lang-colours {
+        .#{$lang} {
+          background-color: $colour;
+        }
+    }
+    
+    span {
+        @include heightWidth($lang-indicator-size, $lang-indicator-size, $lang-indicator-size);
+        margin-right: 10px;
+    }
 }
 
-.lang-select::after {
-    content: " ";
-    position: absolute;
-    left: calc(($lang-indicator-size * -1) - 5px);
-    top: 0;
-    background-color: white;
-    height: $lang-indicator-size;
-    width: $lang-indicator-size;
-    border-radius: $lang-indicator-size;
+.logo-container{
+    @include flexbox(column, center, center);
+    margin-bottom: 20px;
+
+    img {
+        width: 250px;
+        margin-bottom: 5px;
+    }
 }
+
+.center-content-container {
+    @include flexbox(column, center, center);
+    
+    .subtext {
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        width: 300px;
+        margin: 0;
+        background-color: #97A6E6;
+        font-family: $body-font;
+        color: #231F20;
+        @include flexbox(row, center, center);
+
+        img {
+            margin-left: 10px;
+        }
+    }
+}
+.content-container {
+    @include flexbox(row, space-between, center);
+    margin-top: 40px;
+
+    & > div {
+        width: 33%;
+    }
+
+    .tab-pane {
+        width: fit-content;
+        font-size: 16px;
+        font-weight: 200;
+        max-width: 300px;
+
+        h2 {
+            font-weight: 200;
+            font-size: 20px;
+        }
+
+        a {
+            color: $text-color;
+            letter-spacing: 0.1rem;
+        }
+
+        & > * {
+            padding-bottom: 15px;
+        }
+    }
+
+    #pills-tabContent-right .tab-pane {
+        margin-left: auto;
+    }
+}
+
+.cypher-brandname {
+    font-family: $heading-font;
+    color: #D9D9D9;
+    font-size: 49px;
+}
+
+// .lang-select::after {
+//     content: " ";
+//     position: absolute;
+//     left: calc(($lang-indicator-size * -1) - 5px);
+//     top: 0;
+//     background-color: white;
+//     height: $lang-indicator-size;
+//     width: $lang-indicator-size;
+//     border-radius: $lang-indicator-size;
+// }

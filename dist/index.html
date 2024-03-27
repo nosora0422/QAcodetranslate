@@ -7,67 +7,199 @@
     <!-- <link rel="stylesheet" href="reset.css"> -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/landing.css">
-    <title>CodeTranslater</title>
+    <title>Code Translater</title>
 </head>
 
 <body>
     <div class="grid">
-        <div class="col-3">
+        <div class="col-2">
             <!-- spacer for lang-select-container -->
         </div>
-        <ul class="col-6 lang-select-container">
-            <li class="lang-select html">
-                HTML
+        <ul class="nav nav-pills lang-select-container col-8" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active lang-select" id="pills-html-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-html" type="button" role="tab" aria-controls="pills-html"
+                    aria-selected="true">
+                    <span class="nav-lang-indicator html"></span>HTML
+                </button>
             </li>
-            <li class="lang-select css">
-                CSS
+            <li class="nav-item" role="presentation">
+                <button class="nav-link lang-select" id="pills-css-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-css" type="button" role="tab" aria-controls="pills-css"
+                    aria-selected="false">
+                    <span class="nav-lang-indicator css"></span>CSS
+                </button>
             </li>
-            <li class="lang-select js">
-                JavaScript
+            <li class="nav-item" role="presentation">
+                <button class="nav-link lang-select" id="pills-js-tab" data-bs-toggle="pill" data-bs-target="#pills-js"
+                    type="button" role="tab" aria-controls="pills-js" aria-selected="false">
+                    <span class="nav-lang-indicator js"></span>JavaScript
+                </button>
             </li>
-            <li class="lang-select php">
-                PHP
+            <li class="nav-item" role="presentation">
+                <button class="nav-link lang-select" id="pills-php-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-php" type="button" role="tab" aria-selected="false">
+                    <span class="nav-lang-indicator php"></span>PHP
+                </button>
             </li>
-            <li class="lang-select python">
-                Python
+            <li class=" nav-item" role="presentation">
+                <button class="nav-link lang-select" id="pills-python-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-python" type="button" role="tab" aria-selected="false"><span
+                        class="nav-lang-indicator python"></span>Python</button>
             </li>
-            <li class="lang-select cplus">
-                C++
+            <li class=" nav-item" role="presentation">
+                <button class="nav-link lang-select" id="pills-cplus-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-cplus" type="button" role="tab" aria-selected="false">
+                    <span class="nav-lang-indicator cplus"></span>C++
+                </button>
             </li>
         </ul>
-        <div class="col-3">
+        <div class="col-2">
             <!-- spacer for lang-select-container -->
         </div>
+        <div class="col-12 subtext">Choose a programming language for additional learning resources</div>
+        <div class="col-1">
+            <!-- main content spacer -->
+        </div>
+        <div class="col-10 content-container">
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-html" role="tabpanel" aria-labelledby="pills-html-tab"
+                    tabindex="0">
+                    <h2>What is HTML</h2>
+                    <p>HTML stands for HyperText Markup Language. It allows the creation and structure of sections,
+                        paragraphs, and links using HTML elements (the building blocks of a web page) such as tags and
+                        attributes. </p>
+                    <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">Learn More</a>
+                </div>
+
+                <div class="tab-pane fade" id="pills-css" role="tabpanel" aria-labelledby="pills-css-tab" tabindex="0">
+                    <h2>What is CSS</h2>
+                    <p>
+                        With CSS, you can control the color, font, the size of text, the spacing between elements, how
+                        elements are positioned and laid out, what background images or background colors are to be
+                        used, different displays for different devices and screen sizes, and much more!
+                    </p>
+                    <a href="https://www.w3schools.com/html/html_css.asp" target="_blank">Learn More</a>
+                </div>
+
+                <div class="tab-pane fade" id="pills-js" role="tabpanel" aria-labelledby="pills-js-tab" tabindex="0">JS
+                    SOMETHING SOMETHING</div>
+
+                <div class="tab-pane fade" id="pills-php" role="tabpanel" aria-labelledby="pills-php-tab" tabindex="0">
+                    PHP
+                    SOMETHING SOMETHING</div>
+
+                <div class="tab-pane fade" id="pills-python" role="tabpanel" aria-labelledby="pills-python-tab"
+                    tabindex="0">Python SOMETHING SOMETHING</div>
+
+                <div class="tab-pane fade" id="pills-cplus" role="tabpanel" aria-labelledby="pills-cplus-tab"
+                    tabindex="0">
+                    C++ SOMETHING SOMETHING</div>
+            </div>
+            <div class="center-content-container">
+                <div class="logo-container">
+                    <img src="../img/cypher-logo.png">
+                    <h1 class="cypher-brandname">Cypher</h1>
+                </div>
+                <div class="subtext">Universal Translation for Every Programmer</div>
+                <button class="btn" href="translate.html">Begin Translating <img src="../img/btnarrow.svg"></button>
+            </div>
+            <div class="tab-content" id="pills-tabContent-right">
+                <div class="tab-pane fade show active" id="pills-html-right" role="tabpanel"
+                    aria-labelledby="pills-html-tab" tabindex="0">
+
+                    <h2>How CSS is structured</h2>
+                    <p>An external stylesheet contains CSS in a separate file with a .css extension. This is the most
+                        common and useful method of bringing CSS to a document. You can link a single CSS file to
+                        multiple web pages, styling all of them with the same CSS stylesheet.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured"
+                        target="_blank">Learn More</a>
+
+                </div>
+
+                <div class="tab-pane fade" id="pills-css-right" role="tabpanel" aria-labelledby="pills-css-tab"
+                    tabindex="0">
+                    <h2>Audio/Video DOM Reference</h2>
+                    <p>The &#60;video&#62; tag is used to embed video content in a document, such as video streams. The
+                        &#60;audio&#62; tag is used to embed sound content in a document.</p>
+                    <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">Learn More</a>
+                </div>
+
+                <div class="tab-pane fade" id="pills-js-right" role="tabpanel" aria-labelledby="pills-js-tab"
+                    tabindex="0">JS
+                    SOMETHING SOMETHING</div>
+
+                <div class="tab-pane fade" id="pills-php-right" role="tabpanel" aria-labelledby="pills-php-tab"
+                    tabindex="0">
+                    PHP
+                    SOMETHING SOMETHING</div>
+
+                <div class="tab-pane fade" id="pills-python-right" role="tabpanel" aria-labelledby="pills-python-tab"
+                    tabindex="0">Python SOMETHING SOMETHING</div>
+
+                <div class="tab-pane fade" id="pills-cplus-right" role="tabpanel" aria-labelledby="pills-cplus-tab"
+                    tabindex="0">
+                    C++ SOMETHING SOMETHING</div>
+            </div>
+        </div>
+        <div class="col-1">
+            <!-- main content spacer -->
+        </div>
+
+        <div class="slider col-12">
+            <div class="slide-track">
+                <div class="slide html">
+                    <div class="circle html"></div>
+                    HTML
+                </div>
+                <div class="slide css">
+                    <div class="circle css"></div>
+                    CSS
+                </div>
+                <div class="slide js">
+                    <div class="circle js"></div>
+                    JavaScript
+                </div>
+                <div class="slide php">
+                    <div class="circle php"></div>
+                    PHP
+                </div>
+                <div class="slide python">
+                    <div class="circle python"></div>
+                    Python
+                </div>
+                <div class="slide cplus">
+                    <div class="circle cplus"></div>
+                    C++
+                </div>
+                <div class="slide html">
+                    <div class="circle html"></div>
+                    HTML
+                </div>
+                <div class="slide css">
+                    <div class="circle css"></div>
+                    CSS
+                </div>
+                <div class="slide js">
+                    <div class="circle js"></div>
+                    JavaScript
+                </div>
+                <div class="slide php">
+                    <div class="circle php"></div>
+                    PHP
+                </div>
+                <div class="slide python">
+                    <div class="circle python"></div>
+                    Python
+                </div>
+                <div class="slide cplus">
+                    <div class="circle cplus"></div>
+                    C++
+                </div>
+            </div>
+        </div>
+
     </div>
-    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-                type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
-                type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-                type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled"
-                type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
-        </li>
-    </ul>
-    <div class="tab-content" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-            tabindex="0">First</div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-            second</div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-            third</div>
-        <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab"
-            tabindex="0">fourth</div>
-    </div>
-    <button class="btn" href="translate.html">Begin Translating</button>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 

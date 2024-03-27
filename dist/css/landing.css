@@ -1,3 +1,5 @@
+@import url("http://fonts.googleapis.com/css?family=Inter");
+@import url("http://fonts.googleapis.com/css?family=Krona One");
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -169,29 +171,197 @@
 }
 body {
   color: rgb(255, 255, 255);
+  font-family: "Inter", sans-serif;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1410px);
+  }
+}
+.slider {
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: auto;
+  overflow: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.slider .slide-track {
+  animation: scroll 60s linear infinite;
+  display: flex;
+  width: 2820px;
+}
+.slider .slide-track .html {
+  background-color: #E76A4D;
+}
+.slider .slide-track .css {
+  background-color: #264DE4;
+}
+.slider .slide-track .js {
+  background-color: #323330;
+}
+.slider .slide-track .php {
+  background-color: #333A63;
+}
+.slider .slide-track .python {
+  background-color: #3673A5;
+}
+.slider .slide-track .cplus {
+  background-color: #659AD2;
+}
+.slider .slide {
+  height: 225px;
+  width: 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 10px;
+  background-color: gray;
+  font-size: 20px;
+}
+.slider .slide .html {
+  background-color: #C4501E;
+}
+.slider .slide .css {
+  background-color: #4577EB;
+}
+.slider .slide .js {
+  background-color: #F0DB4F;
+}
+.slider .slide .php {
+  background-color: #8993BE;
+}
+.slider .slide .python {
+  background-color: #FFD342;
+}
+.slider .slide .cplus {
+  background-color: #00599C;
+}
+.slider .slide .circle {
+  height: 125px;
+  width: 125px;
+  border-radius: 125px;
 }
 
 .lang-select-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
-.lang-select-container li {
-  list-style-type: none;
+.lang-select-container button {
+  color: rgb(255, 255, 255);
 }
 
 .lang-select {
-  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.lang-select .html {
+  background-color: #C4501E;
+}
+.lang-select .css {
+  background-color: #4577EB;
+}
+.lang-select .js {
+  background-color: #F0DB4F;
+}
+.lang-select .php {
+  background-color: #8993BE;
+}
+.lang-select .python {
+  background-color: #FFD342;
+}
+.lang-select .cplus {
+  background-color: #00599C;
+}
+.lang-select span {
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  margin-right: 10px;
 }
 
-.lang-select::after {
-  content: " ";
-  position: absolute;
-  left: -20px;
-  top: 0;
-  background-color: white;
-  height: 15px;
-  width: 15px;
-  border-radius: 15px;
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.logo-container img {
+  width: 250px;
+  margin-bottom: 5px;
+}
+
+.center-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.center-content-container .subtext {
+  margin-bottom: 30px;
+}
+.center-content-container .btn {
+  width: 300px;
+  margin: 0;
+  background-color: #97A6E6;
+  font-family: "Inter", sans-serif;
+  color: #231F20;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.center-content-container .btn img {
+  margin-left: 10px;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+.content-container > div {
+  width: 33%;
+}
+.content-container .tab-pane {
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: 200;
+  max-width: 300px;
+}
+.content-container .tab-pane h2 {
+  font-weight: 200;
+  font-size: 20px;
+}
+.content-container .tab-pane a {
+  color: rgb(255, 255, 255);
+  letter-spacing: 0.1rem;
+}
+.content-container .tab-pane > * {
+  padding-bottom: 15px;
+}
+.content-container #pills-tabContent-right .tab-pane {
+  margin-left: auto;
+}
+
+.cypher-brandname {
+  font-family: "Krona One", sans-serif;
+  color: #D9D9D9;
+  font-size: 49px;
 }/*# sourceMappingURL=landing.css.map */

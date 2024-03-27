@@ -1,3 +1,9 @@
+$nav-pills-link-active-bg: rgb(0, 0, 0, 0.5);
+$nav-pills-border-radius: 10px;
+$nav-link-hover-color: rgb(201, 201, 201);
+$nav-link-padding-x: 1.25rem;
+$nav-link-padding-y: 0.5rem;
+
 @import "~/bootstrap/scss/functions";
 @import "~/bootstrap/scss/variables";
 @import "~/bootstrap/scss/maps";
@@ -5,22 +11,20 @@
 @import "~/bootstrap/scss/root";
 @import "~/bootstrap/scss/nav";
 
+
 @import "./grid";
 @import "./variables";
 @import "./mixins";
 
 
-@mixin google-font($family) {
-    @import url("http://fonts.googleapis.com/css?family=#{$family}");
-  }
-  
-@include google-font("Intel");
-@include google-font("Krona One");
-
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+button:hover, a:hover {
+    cursor: pointer;
 }
 
 body{
@@ -62,6 +66,10 @@ nav{
     }
 }
 
+.subtext {
+    text-align: center;
+    color: $subtext-color;
+}
 
 .dropdown{
     width: 50%;
@@ -117,7 +125,6 @@ button{
         @media (min-width: map-get($breakpoints, lg)) {
             font-size: 1.2rem;
         }
-        
     };
 
     .textBox{

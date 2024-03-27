@@ -5,21 +5,24 @@ $text-color-onWhite: rgba(0,0,0,1);
 $input-bg-dark: rgba(93,93,93,1);
 $input-bg-light: rgba(217,217,217,1);
 $accent-color: rgba(187,239,74,1);
+$subtext-color: rgba(135, 135, 135, 1);
 
 // language colours
-$html: #C4501E;
-$css: #4577EB;
-$js: #F0DB4F;
-$php: #333A63;
-$python: #FFD342;
-$cplus: #00599C;
+// $html: #C4501E;
+// $css: #4577EB;
+// $js: #F0DB4F;
+// $php: #333A63;
+// $python: #FFD342;
+// $cplus: #00599C;
 
 $title-font: 'Krona One', sans-serif;
 $heading-font: 'Krona One', sans-serif;
-$body-font: 'Intel', sans-serif; 
+$body-font: 'Inter', sans-serif; 
 
 $title-font-size: 1rem;
 $button-font-size: 1rem;
 $body-font-size: 1rem;
 $heading-font-size: 1rem;
 $dropdown-font-size: 1rem;
+
+$border: 1px solid red;
