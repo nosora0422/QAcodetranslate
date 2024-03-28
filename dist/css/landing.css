@@ -1,5 +1,5 @@
-@import url("http://fonts.googleapis.com/css?family=Inter");
-@import url("http://fonts.googleapis.com/css?family=Krona One");
+@import url("http://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+@import url("http://fonts.googleapis.com/css2?family=Krona One:wght@400&display=swap");
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -173,10 +173,11 @@ body {
   color: rgb(255, 255, 255);
   font-family: "Inter", sans-serif;
   min-height: 100vh;
+  line-height: 150%;
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -187,10 +188,10 @@ body {
 
 @keyframes scroll {
   0% {
-    transform: translateX(0);
+    transform: translateX(-1320px);
   }
   100% {
-    transform: translateX(-1410px);
+    transform: translateX(0);
   }
 }
 .slider {
@@ -198,40 +199,43 @@ body {
   height: fit-content;
   overflow: hidden;
   width: 100%;
+  position: relative;
+  opacity: 0.6;
+}
+.slider::before, .slider::after {
+  background: linear-gradient(to right, rgba(42, 42, 42, 0.5) 0%, rgba(255, 255, 255, 0) 10%);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+}
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.slider::before {
+  left: 0;
+  top: 0;
 }
 .slider .slide-track {
   animation: scroll 60s linear infinite;
   display: flex;
-  width: 2820px;
-}
-.slider .slide-track .html {
-  background-color: #E76A4D;
-}
-.slider .slide-track .css {
-  background-color: #264DE4;
-}
-.slider .slide-track .js {
-  background-color: #323330;
-}
-.slider .slide-track .php {
-  background-color: #333A63;
-}
-.slider .slide-track .python {
-  background-color: #3673A5;
-}
-.slider .slide-track .cplus {
-  background-color: #659AD2;
+  width: 2640px;
 }
 .slider .slide {
-  height: 225px;
-  width: 225px;
+  height: 200px;
+  width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   margin: 10px;
-  background-color: gray;
+  background-color: transparent;
   font-size: 20px;
+  font-family: "Inter", sans-serif;
+  font-weight: 100;
 }
 .slider .slide .html {
   background-color: #C4501E;
@@ -252,9 +256,9 @@ body {
   background-color: #00599C;
 }
 .slider .slide .circle {
-  height: 125px;
-  width: 125px;
-  border-radius: 125px;
+  height: 60px;
+  width: 60px;
+  border-radius: 60px;
 }
 
 .lang-select-container {
@@ -343,7 +347,7 @@ body {
   margin-top: 40px;
   height: 100%;
   width: 100%;
-  padding: 0 20px;
+  max-width: 1300px;
 }
 .content-container > div {
   width: 33%;
@@ -352,11 +356,9 @@ body {
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
-  font-weight: 200;
-  max-width: 300px;
+  max-width: 350px;
 }
 .content-container .tab-pane h2 {
-  font-weight: 200;
   font-size: 20px;
 }
 .content-container .tab-pane a {

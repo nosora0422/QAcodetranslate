@@ -40,9 +40,3 @@
     border-radius: $radius;
 }
 
-@mixin google-font($family) {
-    @import url("http://fonts.googleapis.com/css?family=#{$family}");
-  }
-  
-@include google-font("Inter");
-@include google-font("Krona One");
