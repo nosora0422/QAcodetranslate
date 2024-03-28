@@ -1,18 +1,9 @@
-@mixin inputBox($width){
-    width: $width;
-    display: flex;
-    flex-direction: column;
-    height: 50vh;
-    border-radius: 10px;
-}
-
 @mixin flexbox($direction, $justify, $align){
     display: flex;
     flex-direction: $direction;
     justify-content: $justify,;
     align-items: $align;
 }
-
 
 @mixin inputBox ($color){
     width: 100%;
@@ -25,13 +16,53 @@
     margin: 25px 0;
 
     .lang-display{
-        border-bottom: 1px solid #000000;
+        border-bottom: 1px solid #2A2A2A;
         padding: 16px;
     }
     
     p{
-        color: $text-color-onWhite;
+        color: $text-color;
     }
+}
+
+@mixin button ($bg-color){
+    font-size: $button-font-size;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+    background-color: $bg-color;
+
+    &:hover {
+        background-color: darken($bg-color, 10%);
+        cursor: pointer;
+    }
+}
+
+@mixin spinner($gap) {
+        @include flexbox(row, center,center);
+        gap: $gap;
+
+        .spinner-grow{
+            animation-duration: 1000ms;
+        }
+    
+        .spinner-grow:nth-child(1) {
+            animation-delay: 0s; 
+            background-color: #D35034;
+        }
+        
+        .spinner-grow:nth-child(2) {
+            width: 4rem;
+            height: 4rem;
+            animation-delay: 0.2s; 
+            background-color: #CA3A62;
+        }
+        
+        .spinner-grow:nth-child(3) {
+            background-color: #D35034;
+            animation-delay: 0.4s; 
+        }
+
 }
 
 @mixin heightWidth ($height, $width, $radius){
@@ -46,3 +77,4 @@
   
 @include google-font("Inter");
 @include google-font("Krona One");
+@include google-font("monospace");
