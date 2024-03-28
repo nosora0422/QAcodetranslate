@@ -6,6 +6,8 @@ $lang-indicator-size: 12px;
 $slide-width: 225px;
 $animationSpeed: 60s;
 
+$max-screen-width: 1200px;
+
 $lang-colours: (
     html: #C4501E,
     css: #4577EB,
@@ -28,6 +30,15 @@ $lang-bg-colours: (
 body {
     color: $text-color;
     font-family: $body-font;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: $max-screen-width;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    @include flexbox(column, space-between, center)
 }
 
 // Animation
@@ -39,11 +50,7 @@ body {
 
 .slider {
 	height: fit-content;
-	margin: auto;
-	overflow:hidden;
-	position: absolute;
-    bottom: 0;
-    left: 0;
+	overflow: hidden;
 	width: 100%;
 	
 	.slide-track {
@@ -79,9 +86,8 @@ body {
 }
 
 .lang-select-container {
-
-    @include flexbox(row, center, center);
-    margin-top: 20px;
+    @include flexbox(row, center, flex-start);
+    margin: 20px 0;
 
     button {
         color: $text-color;
@@ -105,23 +111,22 @@ body {
 
 .logo-container{
     @include flexbox(column, center, center);
-    margin-bottom: 20px;
 
     img {
-        width: 250px;
-        margin-bottom: 5px;
+        width: 100%;
+        max-width: 370px;
+        margin-bottom: 30px;
     }
 }
 
 .center-content-container {
-    @include flexbox(column, center, center);
-    
-    .subtext {
-        margin-bottom: 30px;
-    }
+    @include flexbox(column, space-evenly, center);
+    height: 50vh;
 
     .btn {
-        width: 300px;
+        width: 100%;
+        max-width: 300px;
+        padding: 20px;
         margin: 0;
         background-color: #97A6E6;
         font-family: $body-font;
@@ -133,9 +138,13 @@ body {
         }
     }
 }
+
 .content-container {
     @include flexbox(row, space-between, center);
     margin-top: 40px;
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
 
     & > div {
         width: 33%;
@@ -172,6 +181,7 @@ body {
     color: #D9D9D9;
     font-size: 49px;
 }
+
 
 // .lang-select::after {
 //     content: " ";
