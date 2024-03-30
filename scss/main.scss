@@ -10,13 +10,51 @@ $nav-link-padding-y: 0.5rem;
 @import "~/bootstrap/scss/mixins";
 @import "~/bootstrap/scss/root";
 @import "~/bootstrap/scss/nav";
+<<<<<<< HEAD
 @import "~/bootstrap/scss/bootstrap-utilities";
+=======
+@import "~/bootstrap/scss/_spinners";
+@import "~/bootstrap/scss/modal";
+>>>>>>> sora
 
 
 @import "./grid";
 @import "./variables";
 @import "./mixins";
 
+%heading-styles {
+    padding: 0px 40px;
+    font-size: $heading-font-size;
+    color: $text-color;
+    font-weight: 300;
+    font-family: $heading-font;
+    line-height: 1.87rem;
+    
+    @media (min-width: map-get($breakpoints, lg)) {
+        font-size: 1.2rem;
+        padding: 16px 0px;
+    }
+}
+
+%textarea-styles{
+    flex: 1;
+    max-width: 100%;
+    width: 100%;
+    padding: 12px;
+    border-radius: 0px 0px 10px 10px;
+    border: transparent;
+    background-color: $input-bg-dark;
+    overflow-x: auto;
+    color: $text-color;
+    
+}
+
+%wrapper-width-styles{
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 24px;
+    margin: 0 auto;
+}
 
 * {
     box-sizing: border-box;
@@ -24,8 +62,10 @@ $nav-link-padding-y: 0.5rem;
     padding: 0;
 }
 
-button:hover, a:hover {
-    cursor: pointer;
+a{
+    color: $text-color;
+    text-decoration: none;
+    font-size: $button-font-size;
 }
 
 body{
@@ -33,20 +73,50 @@ body{
     font-family: $body-font;
 }
 
+.inputBox-Wrapper{
+    margin: 0 auto;
+    width: 100%;
+}
+
+textarea{
+    @extend %textarea-styles;
+}
+
+.dropdown-wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 4px;
+
+    .dropdown{
+        grid-column: span 12;
+        font-size: $dropdown-font-size;
+        padding: 12px;
+        border-radius: 8px;
+    }
+    button{
+        grid-column: span 12;
+    }
+
+    @media (min-width: map-get($breakpoints, sm)) {
+        .dropdown{
+            grid-column: span 8;
+        }
+        button{
+            grid-column: span 4;
+        }
+    }
+}
+
 nav{
     @include flexbox(row, space-between, center);
+    @extend %wrapper-width-styles;
     font-family: $body-font;
     color: $text-color;
-    width: 100vw;
     height: 70px;
-    box-sizing: border-box;
-    padding: 0 24px;
 
     .title{
         font-family: $title-font;
-        @media (min-width: map-get($breakpoints, lg)) {
-            font-size: 28px;
-        }
     }
 
     .logo-img{
@@ -55,15 +125,28 @@ nav{
         max-width: 100px;
     }
 
-    .back-btn-underline{
+    .back-btn-desk{
+        display: none;
         border-bottom: 1px solid $accent-color;
         padding: 6px 0;
     }
+    .back-btn-mobile{
+        display: block;
+        border-bottom: 1px solid $accent-color;
+        padding: 6px 0;
+        margin-left: 40px;
+    }
 
-    a{
-        color: $text-color;
-        text-decoration: none;
-        font-size: $button-font-size;
+    @media (min-width: map-get($breakpoints, lg)) {
+        .title{
+            font-size: 28px;
+        }
+        .back-btn-desk{
+            display: block;
+        }
+        .back-btn-mobile{
+            display: none;
+        }
     }
 }
 
@@ -72,6 +155,7 @@ nav{
     color: $subtext-color;
 }
 
+<<<<<<< HEAD
 .dropdown{
     width: 50%;
     font-size: $dropdown-font-size;
@@ -87,46 +171,41 @@ button, .btn{
     margin-left: 16px;
 }
 
+=======
+>>>>>>> sora
 .icon {
     margin-left: 8px;
 }
 
-
 .container{
-    position: relative;
     width: 100%;
     padding: 10px 24px;
-    @media (min-width: map-get($breakpoints, lg)) {
-        height: calc(100vh - 70px - 51px);
-        padding: 50px 24px;
-    }
 
 }
 
-.modal-screen {
+.valitation-screen {
     @include flexbox(column, center , center );
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 0 auto;
+    @extend %wrapper-width-styles;
+    margin: 0px auto;
     width: 100%;
-    height: 100%;
-    background-color: $background-color;
+    @media (min-width: map-get($breakpoints, lg)) {
+        height: calc(100svh - 70px - 53px);
+        padding: 0 24px;
+    }
+
+    h1 {
+        @extend %heading-styles;
+        color: #DCD64D;
+    }
+
+    h2 {
+        @extend %heading-styles;
+    }
 
     .modal-inner-wrapper{
         max-width: 800px;
         width: 100%;
     }
-
-    h1{
-        font-size: $heading-font-size;
-        color: $text-color;
-        font-weight: 300;
-        font-family: $heading-font;
-        @media (min-width: map-get($breakpoints, lg)) {
-            font-size: 1.2rem;
-        }
-    };
 
     .textBox{
         @include inputBox($input-bg-dark);
@@ -142,76 +221,118 @@ button, .btn{
         width: max-content;
         margin: 0 auto;
     }
-
-    .dropdown-wrapper{
-        @include flexbox(row, space-between , center)
+    .run-btn{
+        @include button(#97A6E6);
     }
+    
+    #accept-btn{
+        @include button(#BF353D);
+    }
+
+    #keep-btn{
+        @include button(#2669A7);
+    }
+
+    #retry-btn{
+        @include button(#97A6E6);
+    }
+    .textarea-wrapper{
+        position: relative;
+    }
+
+    .spinner-screen{
+        @include flexbox(column,center,center);
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        background-color: rgba(42,42,42,0.5);
+        backdrop-filter: blur(10px);
+
+        p{
+            color: $text-color;
+            margin-bottom: 30px;
+        }
+        .spinner-wrapper {
+            @include spinner(80px);
+        }
+    }
+
+    
 }
 
 .main-screen{
     @include flexbox(column, center, center);
-    max-width: 1200px;
-    margin: auto;
-    // padding: 10px 24px;
-    width: 100%;
-    height: 100%;
-    background-color: $background-color;
-    
-    // @media (min-width: map-get($breakpoints, lg)) {
-    //     padding: 50px 24px;
-    // }
+    @extend %wrapper-width-styles;
+    display: none;
+    @media (min-width: map-get($breakpoints, lg)) {
+        height: calc(100svh - 70px - 53px);
+    }
 
     .inner-wrapper{
-        @include flexbox(row, center, center);
+        @include flexbox(column, center, center);
+        position: relative;
         width: 100%;
     }
 
     .textBox{
-        @include inputBox($input-bg-light);
+        @include inputBox($input-bg-dark);
+    }
+
+    .spinner-screen{
+        @include flexbox(column,center,center);
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        p{
+            color: $text-color;
+            margin-bottom: 30px;
+        }
+        .spinner-wrapper {
+            @include spinner(30px);
+        }
+    }
+
+    .lang-display{
+        @include flexbox(row, flex-start, center);
+        gap: 4px;
     }
 
     .validation-btn-wrap{
         @include flexbox(row, space-between, center);
     }
 
-    .dropdown-wrapper{
-        grid-column-start: 1;
-        grid-column-end: 13;
-        @include flexbox(row, space-between, center);
-        @media (min-width: map-get($breakpoints, lg)) {
-            grid-column-start: 8;
-            grid-column-end: 13;
+    #translate-btn,  #new-input-btn{
+        width: 100%;
+        @include button(#97A6E6);
+    }
+
+    #confirm-img{
+        @include flexbox(column,center,center);
+        display: none;
+
+        p{
+            color: $text-color;
+            margin-bottom: 30px;
         }
     }
 
-    .dropdown{
-        width: 100%;
-    }
-
     #output{
-        color: $text-color-onWhite;
+        color: $text-color;
+        font-family: monospace;
+        font-size: 0.85rem;
         overflow-x: auto;
         padding: 12px;
-        line-height: 1.5rem;
     }
 }
 
-.inputBox-Wrapper{
-    margin: 0 auto;
-    width: 100%;
-}
 
-textarea{
-    flex: 1;
-    max-width: 100%;
-    width: 100%;
-    padding: 12px;
-    border-radius: 0px 0px 10px 10px;
-    border: transparent;
-    background-color: $input-bg-light;
-    overflow-x: auto;
-    
-}
 
 footer{
     font-size: $body-font-size;

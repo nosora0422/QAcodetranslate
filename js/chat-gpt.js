@@ -1,26 +1,16 @@
 // const apiKey = '';
-const userLanguageDropdown = document.querySelector('#user-language');
-const translateLanguageDropdown = document.querySelector('#translate-language');
-const confirmImg = document.querySelector('#confirm-img');
+const userLanguageDropdown = document.querySelector('.dropdown');
+const translateLanguageDropdown = document.querySelector('#another-language');
+const mainScreen = document.querySelector('.main-screen')
 
 const inputContent = document.querySelector('#userInput');
-const retryBtn = document.querySelector('#retry-btn');
-const translateBtn = document.querySelector('#translate-btn');
-const output = document.querySelector('#output')
-const valBtn = document.querySelector('#validation-btn')
+const output = document.querySelector('#output');
+const outputLang = document. querySelector('#output-lang')
 
 const valInput = document.querySelector("#validation-code");
-const valBtnWrap = document.querySelector('#validation-btn-wrap');
+const runBtnWrap = document.querySelector('#validation-btn-wrap');
 const btnWrap = document.querySelector('#btn-grp');
-const acceptBtn = document.querySelector('#accept-btn');
-const keepBtn = document.querySelector('#keep-btn'); 
-const modal = document.querySelector('.modal-screen');
-
-
-valBtnWrap.style.display = 'block';
-btnWrap.style.display = 'none';
-confirmImg.style.display = 'none';
-
+const modal = document.querySelector('.valitation-screen');
 
 let firstOption;
 let secondOption;
@@ -29,6 +19,8 @@ let originalInput = '';
 
 
 async function getValidate() {
+    const spinner = document.querySelector('.spinner-screen');
+    spinner.style.display = 'flex';
     console.log('Validation clicked');
 
     originalInput = valInput.value;
@@ -42,11 +34,11 @@ async function getValidate() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-                model: "gpt-3.5-turbo-instruct",
+                model: "gpt-3.5-turbo",
                 messages: [
                   {
                     role: "system",
-                    content: `Can you detect what language this code was written in and debug ${valInput.value}? On return, if there are no errors, return just the word true. If there is an error, tell me what language it was. If there are errors, show only the new output with inline comments on what was changed in exclusively ${firstOption}. Remove any markdown`
+                    content: `Can you detect what language this code was written in and validate ${valInput.value}? On return, tell me what language it was and show only the new output with inline comments on what was changed. If everything is correct, still show my code. Remove any markdown.`
                   }
                 ],
                 max_tokens: 1000
@@ -57,7 +49,7 @@ async function getValidate() {
         const data = await response.json();
         
         if (data.choices[0].message.content && valInput.value){
-            valBtnWrap.style.display = 'none';
+            runBtnWrap.style.display = 'none';
             btnWrap.style.display = 'block';
             valInput.value = data.choices[0].message.content;
             console.log(output)
@@ -65,11 +57,19 @@ async function getValidate() {
     } catch(error){
         console.error(valInput.value);
 
+    } finally{
+        spinner.style.display = 'none';
     }
 }
 
 
 async function getMessage() {
+    const confirmImg = document.querySelector('#confirm-img');
+    confirmImg.style.display = 'none';
+    
+    const spinner = document.querySelector('.spinner-screen');
+    spinner.style.display = 'flex';
+
     console.log('translation-clicked');
     const options = {
         method: 'POST',
@@ -82,7 +82,7 @@ async function getMessage() {
                 messages: [
                   {
                     role: "system",
-                    content: `Can you translate any code in ${inputContent.value} to ${secondOption}? `
+                    content: `Can you translate this code below to ${firstOption}? ${inputContent.value}`
                   }
                 ],
                 max_tokens: 1000
@@ -92,39 +92,58 @@ async function getMessage() {
         const response = await fetch('https://api.openai.com/v1/chat/completions', options);
         const data = await response.json();
         output.textContent = data.choices[0].message.content;
+        outputLang.textContent = firstOption;
         if (data.choices[0].message.content && inputContent.value){
             const pElement = document.createElement('p');
             pElement.textContent = output.value;
-            confirmImg.style.display = 'block';
-            // pElement.addEventListener('click', () => changeInput(pElement.textContent));
-            // pElement.classList.add('hstr-item','card-item');
+            confirmImg.style.display = 'flex';
             console.log(output)
         }
     } catch(error){
         console.error(error);
 
+    } finally{
+        spinner.style.display = 'none';
     }
 }
 
-valBtn.addEventListener('click', getValidate);
+runBtnWrap.style.display = 'block';
+btnWrap.style.display = 'none';
+
+const runBtn = document.querySelector('#validation-btn');
+runBtn.addEventListener('click', getValidate);
+
+const translateBtn = document.querySelector('#translate-btn');
 translateBtn.addEventListener('click', getMessage);
+
+const acceptBtn = document.querySelector('#accept-btn');
 acceptBtn.addEventListener('click', () => {
     modal.style.display = 'none';
     inputContent.value = valInput.value;
+    mainScreen.style.display = 'flex';
+    getMessage();
 });
+
+const keepBtn = document.querySelector('#keep-btn'); 
 keepBtn.addEventListener('click', () => {
     modal.style.display = 'none';
     inputContent.value = originalInput;
+    mainScreen.style.display = 'flex';
+    btnWrap.style.display = 'block';
+    getMessage();
 });
 
+const retryBtn = document.querySelector('#retry-btn');
 retryBtn.addEventListener('click', () => {
     valInput.value = ''
-    valBtnWrap.style.display = 'block';
+    runBtnWrap.style.display = 'block';
     btnWrap.style.display = 'none';
 })
 
-
-// newChatbtn.addEventListener('click', clearInput);
+const newBtn = document.querySelector('#new-input-btn');
+newBtn.addEventListener('click', () => {
+    location.reload();
+})
 
 /* dropdown*/
 userLanguageDropdown.addEventListener('change', function() {
@@ -133,10 +152,9 @@ userLanguageDropdown.addEventListener('change', function() {
 });
 
 translateLanguageDropdown.addEventListener('change', function() {
-    secondOption = this.value;
-    console.log('Translation Language Selected:', secondOption);
+    firstOption = this.value;
+    console.log('another Language Selected:', firstOption);
 });
-
 
 
 

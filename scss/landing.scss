@@ -179,9 +179,8 @@ body {
         padding: 20px;
         margin: 0;
         background-color: #97A6E6;
-        font-family: $body-font;
         color: #231F20;
-        text-decoration: none;
+        @include button(#97A6E6);
         @include flexbox(row, center, center);
 
         img {
