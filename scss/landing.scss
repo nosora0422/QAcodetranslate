@@ -3,10 +3,10 @@
 @import "./mixins";
 
 $lang-indicator-size: 12px;
-$slide-width: 200px;
-$slide-margin: 10px;
-$slide-num: 6;
-$animationSpeed: 60s;
+$slide-width: 80px;
+$slide-margin: 40px;
+$slide-num: 13 * 2;
+$animationSpeed: 50s;
 
 $max-screen-width: 1500px;
 
@@ -25,12 +25,19 @@ $lang-colours: (
 );
 
 $lang-bg-colours: (
-    html: #E76A4D,
-    css: #264DE4,
-    js: #323330,
-    php: #333A63,
-    python: #3673A5,
-    cplus: #659AD2
+    html: #C4501E,
+    css: #4577EB,
+    js: #F0DB4F,
+    php: #8993BE,
+    python: #FFD342,
+    cplus: #00599C,
+    swift: #ED4228,
+    kotlin: #D86783,
+    rust: #F74B00,
+    r: #1C62B3,
+    java: #F8981D,
+    ruby: #930F17,
+    go: #74CEDD,
 );
 
 
@@ -53,13 +60,13 @@ body {
 
 // Animation
 @keyframes scroll {
-	0% { transform: translateX(calc(($slide-width + ($slide-margin * 2)) * ($slide-num * -1))); }
-	100% { transform: translateX(0)}
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(($slide-width + ($slide-margin * 2)) * ($slide-num / 2))); }
 }
 
 
 .slider {
-	height: fit-content;
+	height: 150px;
 	overflow: hidden;
 	width: 100%;
     position: relative;
@@ -94,35 +101,37 @@ body {
 	
 	.slide-track {
 		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(($slide-width + ($slide-margin * 2)) * ($slide-num * 2));
+        position: absolute;
+        right: 0;
+        bottom: 0;
+		@include flexbox(row, center, flex-start);
+		width: calc(($slide-width + ($slide-margin * 2)) * ($slide-num));
+
+        @each $slide, $colour in $lang-bg-colours {
+            .#{$slide} {
+              background-color: $colour;
+            }
+        }
+	}
+	
+	.slide {
+		@include heightWidth($slide-width, $slide-width, $slide-width);
+        // @include flexbox(column, space-evenly, center);
+        margin: $slide-margin;
+        font-size: 20px;
+        font-family: $body-font;
+        font-weight: 100;
 
         // @each $slide, $colour in $lang-colours {
         //     .#{$slide} {
         //       background-color: $colour;
         //     }
         // }
-	}
-	
-	.slide {
-		@include heightWidth($slide-width, $slide-width, null);
-        @include flexbox(column, space-evenly, center);
-        margin: $slide-margin;
-        background-color: transparent;
-        font-size: 20px;
-        font-family: $body-font;
-        font-weight: 100;
 
-        @each $slide, $colour in $lang-colours {
-            .#{$slide} {
-              background-color: $colour;
-            }
-        }
-
-        .circle {
-            @include heightWidth(60px, 60px, 60px);
-            // background-color: white;
-        }
+        // .circle {
+        //     @include heightWidth(60px, 60px, 60px);
+        //     // background-color: white;
+        // }
 	}
 }
 
@@ -172,6 +181,7 @@ body {
         background-color: #97A6E6;
         font-family: $body-font;
         color: #231F20;
+        text-decoration: none;
         @include flexbox(row, center, center);
 
         img {
@@ -181,21 +191,44 @@ body {
 }
 
 .content-container {
-    @include flexbox(row, space-between, center);
-    margin-top: 40px;
     height: 100%;
     width: 100%;
     max-width: 1300px;
-    // padding: 0 20px;
+    display: grid;
+    grid-template-areas: 
+        "centerPane"
+        "leftPane"
+        "rightPane"
+    ;
+    grid-template-columns: 1fr;
+    margin-top: 40px;
 
-    & > div {
-        width: 33%;
+
+    #pills-tabContent-left, .center-content-container, #pills-tabContent-right {
+        margin: 0 auto;
+        width: fit-content;
+    }
+
+    .center-content-container {
+        grid-area: centerPane;
+        height: 500px;
+    }
+
+    #pills-tabContent-left{
+        grid-area: leftPane;
+        
+    }
+
+    #pills-tabContent-right{
+        grid-area: rightPane;
     }
 
     .tab-pane {
         width: fit-content;
         font-size: 16px;
-        max-width: 350px;
+        max-width: 400px;
+        margin-bottom: 30px;
+        padding: 20px;
 
         h2 {
             font-size: 20px;
@@ -211,8 +244,36 @@ body {
         }
     }
 
-    #pills-tabContent-right .tab-pane {
-        margin-left: auto;
+    @media (min-width: map-get($breakpoints, lg)) {
+        @include flexbox(row, space-between, center);
+
+        max-width: 85%;
+
+       #pills-tabContent-left, .center-content-container, #pills-tabContent-right {
+            width: 33%;
+        }
+
+        .tab-pane {
+            max-width: 300px;
+        }
+
+        #pills-tabContent-right .tab-pane {
+            margin-left: auto;
+        }
+    }
+
+    @media (min-width: map-get($breakpoints, sm)) {
+        .tab-pane{
+            padding: 0;
+        }
+    }
+}
+
+.subtext {
+    padding: 20px;
+
+    @media (min-width: map-get($breakpoints, sm)) {
+        padding: 0;
     }
 }
 
@@ -223,13 +284,12 @@ body {
 }
 
 
-// .lang-select::after {
-//     content: " ";
-//     position: absolute;
-//     left: calc(($lang-indicator-size * -1) - 5px);
-//     top: 0;
-//     background-color: white;
-//     height: $lang-indicator-size;
-//     width: $lang-indicator-size;
-//     border-radius: $lang-indicator-size;
-// }
+.nav-container {
+    // overflow-x: scroll;
+    max-width: 100vw;
+    scrollbar-color: rgb(70, 70, 70) rgb(38, 38, 38);
+}
+
+.lang-select-container {
+    min-width: 740px;
+}

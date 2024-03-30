@@ -10,6 +10,7 @@ $nav-link-padding-y: 0.5rem;
 @import "~/bootstrap/scss/mixins";
 @import "~/bootstrap/scss/root";
 @import "~/bootstrap/scss/nav";
+@import "~/bootstrap/scss/bootstrap-utilities";
 
 
 @import "./grid";
@@ -78,7 +79,7 @@ nav{
     border-radius: 8px;
 }
 
-button{
+button, .btn{
     font-size: $button-font-size;
     padding: 12px 24px;
     border-radius: 8px;

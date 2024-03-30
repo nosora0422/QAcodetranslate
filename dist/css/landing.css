@@ -188,15 +188,14 @@ body {
 
 @keyframes scroll {
   0% {
-    transform: translateX(-1320px);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(2080px);
   }
 }
 .slider {
-  height: -moz-fit-content;
-  height: fit-content;
+  height: 150px;
   overflow: hidden;
   width: 100%;
   position: relative;
@@ -220,45 +219,63 @@ body {
   top: 0;
 }
 .slider .slide-track {
-  animation: scroll 60s linear infinite;
+  animation: scroll 50s linear infinite;
+  position: absolute;
+  right: 0;
+  bottom: 0;
   display: flex;
-  width: 2640px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  width: 4160px;
+}
+.slider .slide-track .html {
+  background-color: #C4501E;
+}
+.slider .slide-track .css {
+  background-color: #4577EB;
+}
+.slider .slide-track .js {
+  background-color: #F0DB4F;
+}
+.slider .slide-track .php {
+  background-color: #8993BE;
+}
+.slider .slide-track .python {
+  background-color: #FFD342;
+}
+.slider .slide-track .cplus {
+  background-color: #00599C;
+}
+.slider .slide-track .swift {
+  background-color: #ED4228;
+}
+.slider .slide-track .kotlin {
+  background-color: #D86783;
+}
+.slider .slide-track .rust {
+  background-color: #F74B00;
+}
+.slider .slide-track .r {
+  background-color: #1C62B3;
+}
+.slider .slide-track .java {
+  background-color: #F8981D;
+}
+.slider .slide-track .ruby {
+  background-color: #930F17;
+}
+.slider .slide-track .go {
+  background-color: #74CEDD;
 }
 .slider .slide {
-  height: 200px;
-  width: 200px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  margin: 10px;
-  background-color: transparent;
+  height: 80px;
+  width: 80px;
+  border-radius: 80px;
+  margin: 40px;
   font-size: 20px;
   font-family: "Inter", sans-serif;
   font-weight: 100;
-}
-.slider .slide .html {
-  background-color: #C4501E;
-}
-.slider .slide .css {
-  background-color: #4577EB;
-}
-.slider .slide .js {
-  background-color: #F0DB4F;
-}
-.slider .slide .php {
-  background-color: #8993BE;
-}
-.slider .slide .python {
-  background-color: #FFD342;
-}
-.slider .slide .cplus {
-  background-color: #00599C;
-}
-.slider .slide .circle {
-  height: 60px;
-  width: 60px;
-  border-radius: 60px;
 }
 
 .lang-select-container {
@@ -330,6 +347,7 @@ body {
   background-color: #97A6E6;
   font-family: "Inter", sans-serif;
   color: #231F20;
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -340,23 +358,36 @@ body {
 }
 
 .content-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 40px;
   height: 100%;
   width: 100%;
   max-width: 1300px;
+  display: grid;
+  grid-template-areas: "centerPane" "leftPane" "rightPane";
+  grid-template-columns: 1fr;
+  margin-top: 40px;
 }
-.content-container > div {
-  width: 33%;
+.content-container #pills-tabContent-left, .content-container .center-content-container, .content-container #pills-tabContent-right {
+  margin: 0 auto;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.content-container .center-content-container {
+  grid-area: centerPane;
+  height: 500px;
+}
+.content-container #pills-tabContent-left {
+  grid-area: leftPane;
+}
+.content-container #pills-tabContent-right {
+  grid-area: rightPane;
 }
 .content-container .tab-pane {
   width: -moz-fit-content;
   width: fit-content;
   font-size: 16px;
-  max-width: 350px;
+  max-width: 400px;
+  margin-bottom: 30px;
+  padding: 20px;
 }
 .content-container .tab-pane h2 {
   font-size: 20px;
@@ -368,12 +399,50 @@ body {
 .content-container .tab-pane > * {
   padding-bottom: 15px;
 }
-.content-container #pills-tabContent-right .tab-pane {
-  margin-left: auto;
+@media (min-width: 1080px) {
+  .content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 85%;
+  }
+  .content-container #pills-tabContent-left, .content-container .center-content-container, .content-container #pills-tabContent-right {
+    width: 33%;
+  }
+  .content-container .tab-pane {
+    max-width: 300px;
+  }
+  .content-container #pills-tabContent-right .tab-pane {
+    margin-left: auto;
+  }
+}
+@media (min-width: 568px) {
+  .content-container .tab-pane {
+    padding: 0;
+  }
+}
+
+.subtext {
+  padding: 20px;
+}
+@media (min-width: 568px) {
+  .subtext {
+    padding: 0;
+  }
 }
 
 .cypher-brandname {
   font-family: "Krona One", sans-serif;
   color: #D9D9D9;
   font-size: 49px;
+}
+
+.nav-container {
+  max-width: 100vw;
+  scrollbar-color: rgb(70, 70, 70) rgb(38, 38, 38);
+}
+
+.lang-select-container {
+  min-width: 740px;
 }/*# sourceMappingURL=landing.css.map */

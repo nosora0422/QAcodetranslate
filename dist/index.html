@@ -12,45 +12,51 @@
 
 <body>
     <div class="wrapper">
-        <div class="nav-container">
+        <div class="nav-container overflow-x-auto">
             <ul class="nav nav-pills lang-select-container" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active lang-select" id="pills-html-tab" type="button" role="tab" aria-controls="pills-html" data-target="htmlPane">
+                    <button class="nav-link active lang-select" id="pills-html-tab" type="button" role="tab"
+                        aria-controls="pills-html" data-target="htmlPane">
                         <span class="nav-lang-indicator html"></span>HTML
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link lang-select" id="pills-css-tab" type="button" role="tab" aria-controls="pills-css" data-target="cssPane">
+                    <button class="nav-link lang-select" id="pills-css-tab" type="button" role="tab"
+                        aria-controls="pills-css" data-target="cssPane">
                         <span class="nav-lang-indicator css"></span>CSS
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link lang-select" id="pills-js-tab" type="button" role="tab" aria-controls="pills-js" data-target="jsPane">
+                    <button class="nav-link lang-select" id="pills-js-tab" type="button" role="tab"
+                        aria-controls="pills-js" data-target="jsPane">
                         <span class="nav-lang-indicator js"></span>JavaScript
                     </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link lang-select" id="pills-php-tab" type="button" role="tab" aria-controls="pills-php" data-target="phpPane">
+                    <button class="nav-link lang-select" id="pills-php-tab" type="button" role="tab"
+                        aria-controls="pills-php" data-target="phpPane">
                         <span class="nav-lang-indicator php"></span>PHP
                     </button>
                 </li>
                 <li class=" nav-item" role="presentation">
-                    <button class="nav-link lang-select" id="pills-python-tab" type="button" role="tab" aria-controls="pills-python" data-target="pythonPane"><span
+                    <button class="nav-link lang-select" id="pills-python-tab" type="button" role="tab"
+                        aria-controls="pills-python" data-target="pythonPane"><span
                             class="nav-lang-indicator python"></span>Python</button>
                 </li>
                 <li class=" nav-item" role="presentation">
-                    <button class="nav-link lang-select" id="pills-cplus-tab" type="button" role="tab" aria-controls="pills-cplus" data-target="cplusPane">
+                    <button class="nav-link lang-select" id="pills-cplus-tab" type="button" role="tab"
+                        aria-controls="pills-cplus" data-target="cplusPane">
                         <span class="nav-lang-indicator cplus"></span>C++
                     </button>
                 </li>
             </ul>
-            <div class="subtext">Choose a programming language for additional learning resources</div>
         </div>
-        
+        <div class="subtext">Choose a programming language for additional learning resources</div>
+
         <div class="content-container">
             <div class="tab-content" id="pills-tabContent-left">
                 <div class="tab-pane pane-html active">
-                    <h2>What is HTML</h2>
+                    <h2>What is HTML?</h2>
                     <p>HTML stands for HyperText Markup Language. It allows the creation and structure of sections,
                         paragraphs, and links using HTML elements (the building blocks of a web page) such as tags and
                         attributes. </p>
@@ -58,7 +64,7 @@
                 </div>
 
                 <div class="tab-pane pane-css">
-                    <h2>What is CSS</h2>
+                    <h2>What is CSS?</h2>
                     <p>
                         With CSS, you can control the color, font, the size of text, the spacing between elements, how
                         elements are positioned and laid out, what background images or background colors are to be
@@ -67,17 +73,45 @@
                     <a href="https://www.w3schools.com/html/html_css.asp" target="_blank">Learn More</a>
                 </div>
 
-                <div class="tab-pane pane-js">JS
-                    SOMETHING SOMETHING</div>
+                <div class="tab-pane pane-js">
+                    <h2>What is JavaScript?</h2>
+                    <p>
+                        JavaScript is a scripting or programming language that allows you to implement complex features
+                        on web pages
+                    </p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript"
+                        target="_blank">Learn More</a>
+                </div>
 
                 <div class="tab-pane pane-php">
-                    PHP
-                    SOMETHING SOMETHING</div>
+                    <h2>What is PHP?</h2>
+                    <p>
+                        PHP is an acronym for "PHP: Hypertext Preprocessor". This language is an open source scripting
+                        language that is widely-used in the industry. PHP scripts are executed on the server-side and is
+                        free to download and use.
+                    </p>
+                    <a href="https://www.w3schools.com/php/php_intro.asp" target="_blank">Learn More</a>
+                </div>
 
-                <div class="tab-pane pane-python">Python SOMETHING SOMETHING</div>
+                <div class="tab-pane pane-python">
+                    <h2>What is Python?</h2>
+                    <p>
+                        Python is a popular programming language. It was created by Guido van Rossum, and released in
+                        1991. This coding language is mainly used for web development, software development, mathematics
+                        and system scripting.
+                    </p>
+                    <a href="https://www.w3schools.com/python/python_intro.asp" target="_blank">Learn More</a>
+                </div>
 
                 <div class="tab-pane pane-cplus">
-                    C++ SOMETHING SOMETHING</div>
+                    <h2>What is C++</h2>
+                    <p>
+                        C++ is a cross-platform language developed by Bjarne Stroustrup, as an extension to the C
+                        language.This language can be used to create high-performance applications. C++ gives
+                        programmers a high level of control over system resources and memory.
+                    </p>
+                    <a href="https://www.w3schools.com/cpp/cpp_intro.asp" target="_blank">Learn More</a>
+                </div>
             </div>
             <div class="center-content-container">
                 <div class="logo-container">
@@ -85,38 +119,63 @@
                     <h1 class="cypher-brandname">Cypher</h1>
                 </div>
                 <div class="subtext">Universal Translation for Every Programmer</div>
-                <button class="btn" href="translate.html">Begin Translating <img src="../img/btnarrow.svg"></button>
+                <a class="btn" href="translate.html">Begin Translating <img src="../img/btnarrow.svg"></a>
             </div>
             <div class="tab-content" id="pills-tabContent-right">
                 <div class="tab-pane pane-html active">
-
-                    <h2>How CSS is structured</h2>
-                    <p>An external stylesheet contains CSS in a separate file with a .css extension. This is the most
-                        common and useful method of bringing CSS to a document. You can link a single CSS file to
-                        multiple web pages, styling all of them with the same CSS stylesheet.</p>
-                    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured"
-                        target="_blank">Learn More</a>
-
-                </div>
-
-                <div class="tab-pane pane-css">
                     <h2>Audio/Video DOM Reference</h2>
                     <p>The &#60;video&#62; tag is used to embed video content in a document, such as video streams. The
                         &#60;audio&#62; tag is used to embed sound content in a document.</p>
                     <a href="https://www.w3schools.com/html/html5_semantic_elements.asp" target="_blank">Learn More</a>
                 </div>
 
-                <div class="tab-pane pane-js">JS
-                    SOMETHING SOMETHING</div>
+                <div class="tab-pane pane-css">
+                    <h2>How CSS is structured?</h2>
+                    <p>An external stylesheet contains CSS in a separate file with a .css extension. This is the most
+                        common and useful method of bringing CSS to a document. You can link a single CSS file to
+                        multiple web pages, styling all of them with the same CSS stylesheet.</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/How_CSS_is_structured"
+                        target="_blank">Learn More</a>
+                </div>
+
+                <div class="tab-pane pane-js">
+                    <h2>Troubleshooting in JavaScript</h2>
+                    <p>
+                        Generally speaking, when you do something wrong in code, there are two main types of errors that
+                        you'll come across: Syntax and Logical.
+                    </p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong"
+                        target="_blank">Learn More</a>
+                </div>
 
                 <div class="tab-pane pane-php">
-                    PHP
-                    SOMETHING SOMETHING</div>
+                    <h2>What's new in PHP 7</h2>
+                    <p>
+                        PHP 7 is much faster than the previous popular stable release (PHP 5.6) and has improved Error
+                        Handling. PHP 7 supports stricter Type Declarations for function arguments and new operations
+                        like the spaceship operator
+                    </p>
+                    <a href="https://www.w3schools.com/php/php_intro.asp" target="_blank">Learn More</a>
+                </div>
 
-                <div class="tab-pane pane-python">Python SOMETHING SOMETHING</div>
+                <div class="tab-pane pane-python">
+                    <h2>Python Syntax</h2>
+                    <p>
+                        Python was designed for readability, and has some similarities to the English language with
+                        influence from mathematics. Every new line is a new line of code opposed to other languages that
+                        use semicolons or parenthesis to end a line of code.
+                    </p>
+                    <a href="https://www.w3schools.com/python/python_intro.asp" target="_blank">Learn More</a>
+                </div>
 
                 <div class="tab-pane pane-cplus">
-                    C++ SOMETHING SOMETHING</div>
+                    <h2>C++ vs. C</h2>
+                    <p>
+                        C++ was developed as an extension of C, and both languages have almost the same syntax. The main
+                        difference between C and C++ is that C++ supports classes and objects, while C does not.
+                    </p>
+                    <a href="https://www.w3schools.com/cpp/cpp_intro.asp " target="_blank">Learn More</a>
+                </div>
             </div>
         </div>
         <div class="slider">
@@ -139,6 +198,27 @@
                 <div class="slide cplus">
                     <div class="circle cplus"></div>
                 </div>
+                <div class="slide swift">
+                    <div class="circle html"></div>
+                </div>
+                <div class="slide kotlin">
+                    <div class="circle css"></div>
+                </div>
+                <div class="slide rust">
+                    <div class="circle js"></div>
+                </div>
+                <div class="slide r">
+                    <div class="circle php"></div>
+                </div>
+                <div class="slide java">
+                    <div class="circle python"></div>
+                </div>
+                <div class="slide ruby">
+                    <div class="circle cplus"></div>
+                </div>
+                <div class="slide go">
+                    <div class="circle html"></div>
+                </div>
                 <div class="slide html">
                     <div class="circle html"></div>
                 </div>
@@ -156,6 +236,27 @@
                 </div>
                 <div class="slide cplus">
                     <div class="circle cplus"></div>
+                </div>
+                <div class="slide swift">
+                    <div class="circle html"></div>
+                </div>
+                <div class="slide kotlin">
+                    <div class="circle css"></div>
+                </div>
+                <div class="slide rust">
+                    <div class="circle js"></div>
+                </div>
+                <div class="slide r">
+                    <div class="circle php"></div>
+                </div>
+                <div class="slide java">
+                    <div class="circle python"></div>
+                </div>
+                <div class="slide ruby">
+                    <div class="circle cplus"></div>
+                </div>
+                <div class="slide go">
+                    <div class="circle html"></div>
                 </div>
             </div>
         </div>
