@@ -10,12 +10,9 @@ $nav-link-padding-y: 0.5rem;
 @import "~/bootstrap/scss/mixins";
 @import "~/bootstrap/scss/root";
 @import "~/bootstrap/scss/nav";
-<<<<<<< HEAD
 @import "~/bootstrap/scss/bootstrap-utilities";
-=======
 @import "~/bootstrap/scss/_spinners";
 @import "~/bootstrap/scss/modal";
->>>>>>> sora
 
 
 @import "./grid";
@@ -155,7 +152,6 @@ nav{
     color: $subtext-color;
 }
 
-<<<<<<< HEAD
 .dropdown{
     width: 50%;
     font-size: $dropdown-font-size;
@@ -171,8 +167,6 @@ button, .btn{
     margin-left: 16px;
 }
 
-=======
->>>>>>> sora
 .icon {
     margin-left: 8px;
 }
