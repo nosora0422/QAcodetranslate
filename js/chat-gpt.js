@@ -145,21 +145,24 @@ async function getValidate() {
             fetch('https://api.openai.com/v1/chat/completions', checkError),
             fetch('https://api.openai.com/v1/chat/completions', options)
         ]);
-
+        
         initLang = await langResponse.json();
         isError = await errorResponse.json();
         const corrected = await correctedResponse.json();
-
+        const inputLang = document.querySelector("#input-lang");
         // check if errors were found and handle accordingly
         if (isError.choices[0].message.content === "True") {
             runBtnWrap.style.display = 'none';
             btnWrap.style.display = 'block';
             valInput.value = corrected.choices[0].message.content;
+            inputLang.textContent = initLang.choices[0].message.content;
+            
         } else {
             modal.style.display = 'none';
             inputContent.value = originalInput;
             mainScreen.style.display = 'flex';
             btnWrap.style.display = 'block';
+            inputLang.textContent = initLang.choices[0].message.content;
             getMessage();
         }
 
@@ -198,12 +201,14 @@ async function getMessage() {
     try {
         const response = await fetch('https://api.openai.com/v1/chat/completions', options);
         const data = await response.json();
+        
         output.textContent = data.choices[0].message.content;
         outputLang.textContent = firstOption;
         if (data.choices[0].message.content && inputContent.value) {
             const pElement = document.createElement('p');
             pElement.textContent = output.value;
             confirmImg.style.display = 'flex';
+            
             console.log(output)
         }
     } catch (error) {
