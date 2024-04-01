@@ -27,6 +27,7 @@ let isError;
 runBtnWrap.style.display = 'block';
 btnWrap.style.display = 'none';
 
+
 const runBtn = document.querySelector('#validation-btn');
 runBtn.addEventListener('click', getValidate);
 
@@ -58,6 +59,7 @@ retryBtn.addEventListener('click', () => {
 })
 
 const newBtn = document.querySelector('#new-input-btn');
+newBtn.style.display = 'none';
 newBtn.addEventListener('click', () => {
     location.reload();
 })
@@ -74,7 +76,7 @@ translateLanguageDropdown.addEventListener('change', function () {
 });
 
 async function getValidate() {
-    const spinner = document.querySelector('.spinner-screen');
+    const spinner = document.querySelector('#spinner-screen1');
     spinner.style.display = 'flex';
     console.log('Validation clicked');
 
@@ -170,6 +172,7 @@ async function getValidate() {
         console.error(valInput.value);
     } finally {
         spinner.style.display = 'none';
+       
     }
 }
 
@@ -177,7 +180,7 @@ async function getMessage() {
     const confirmImg = document.querySelector('#confirm-img');
     confirmImg.style.display = 'none';
 
-    const spinner = document.querySelector('.spinner-screen');
+    const spinner = document.querySelector('#spinner-screen2');
     spinner.style.display = 'flex';
 
     console.log('translation-clicked');
@@ -216,6 +219,7 @@ async function getMessage() {
 
     } finally {
         spinner.style.display = 'none';
+        newBtn.style.display = 'block';
     }
 }
 
