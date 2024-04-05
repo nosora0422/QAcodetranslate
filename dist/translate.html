@@ -7,6 +7,8 @@
     <!-- <link rel="stylesheet" href="reset.css"> -->
     <link rel="stylesheet" href="css/main.css">
     <script src="https://kit.fontawesome.com/1a72bf9d1c.js" crossorigin="anonymous"></script>
+    
+
 </head>
 <body>
     <nav>
@@ -35,7 +37,7 @@
                             <div class="spinner-grow" role="status"></div>
                         </div>
                     </div>
-                    <textarea class="textBox" id='validation-code' type="text" placeholder="Please enter message" required></textarea>
+                    <textarea class="textBox" id='initial-input' type="text" placeholder="Please enter message" required></textarea>
                 </div>
                 <div class="validation-btn-wrap" id="validation-btn-wrap">
                     <div class="dropdown-wrapper">
@@ -70,7 +72,7 @@
                             <p>Translate from:</p>
                             <p id="input-lang"></p>
                         </div>    
-                        <textarea id='userInput' type="text" readonly></textarea>
+                        <textarea id='validatedInput' type="text" readonly></textarea>
                     </div>
                     <button id="new-input-btn">Try New Input</button>
                 </div>
@@ -116,6 +118,7 @@
         </div>
     </div>
     <footer>MDIA-QA-Final Project</footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script type="module" src="../js/chat-gpt.js"></script>
 </body>
 </html>
