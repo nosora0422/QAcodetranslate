@@ -77,7 +77,7 @@ translateBtn.addEventListener('click', () => {
 
 
 
-
+/**** change fetch uri to your domain (http://yourdomain.com/validate_code.php) ********/
 async function getValidate(value) {
     const spinner = document.querySelector('#spinner-screen1');
     spinner.style.display = 'flex';
@@ -130,7 +130,7 @@ async function getValidate(value) {
 }
 
 
-
+/**** change fetch uri to your domain (http://yourdomain.com/validate_code.php) ********/
 async function getMessage(language, value) {
     const confirmImg = document.querySelector('#confirm-img');
     confirmImg.style.display = 'none';
