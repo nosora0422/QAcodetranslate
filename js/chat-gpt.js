@@ -42,7 +42,6 @@ keepBtn.addEventListener('click', () => {
     modal.style.display = 'none';
     inputContent.value = originalInput;
     mainScreen.style.display = 'flex';
-    btnWrap.style.display = 'block';
     getMessage(firstOption, inputContent.value);
 });
 
@@ -84,7 +83,7 @@ async function getValidate(value) {
     spinner.style.display = 'flex';
 
     try {
-        const response = await fetch('http://localhost:8888/validate_code.php',{
+        const response = await fetch('http://cypher.sarahnoh.ca/validate_code.php',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -110,14 +109,14 @@ async function getValidate(value) {
 
         if (isError === "True") {
             runBtnWrap.style.display = 'none';
-            btnWrap.style.display = 'block';
+            btnWrap.style.display = 'flex';
             valInput.value = corrected;
             inputLang.textContent = initLang;
         } else {
             modal.style.display = 'none';
             inputContent.value = valInput.value;
             mainScreen.style.display = 'flex';
-            btnWrap.style.display = 'block';
+            btnWrap.style.display = 'flex';
             inputLang.textContent = initLang;
             getMessage(firstOption, inputContent.value);
         }
@@ -142,7 +141,7 @@ async function getMessage(language, value) {
     console.log('translation-clicked');
 
     try {
-        const response = await fetch('http://localhost:8888/get_message.php',{
+        const response = await fetch('http://cypher.sarahnoh.ca/get_message.php',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

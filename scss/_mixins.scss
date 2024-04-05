@@ -26,6 +26,7 @@
 }
 
 @mixin button ($bg-color){
+    width: 100%;
     font-size: $button-font-size;
     padding: 12px 24px;
     border-radius: 8px;

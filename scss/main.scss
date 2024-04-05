@@ -136,8 +136,9 @@ nav{
     }
     .back-btn-mobile{
         display: block;
+        width: auto;
         border-bottom: 1px solid $accent-color;
-        padding: 6px 0;
+        padding: 6px 4px;
         margin-left: 40px;
     }
 
@@ -204,26 +205,37 @@ nav{
         width: 100%;
     }
     .btn-grp{
+        
         width: 100%;
     }
     .btn-grp-wrapper{
-        width: max-content;
-        margin: 0 auto;
+        @include flexbox(column, center, flex-start);
+        gap: 8px;
+        width: 100%;
+        @media (min-width: map-get($breakpoints, lg)) {
+            @include flexbox(row, center, center);
+            margin: 0 auto;
+        }
+
     }
     .run-btn{
         @include button(#97A6E6);
+        
     }
     
     #accept-btn{
         @include button(#BF353D);
+
     }
 
     #keep-btn{
         @include button(#2669A7);
+
     }
 
     #retry-btn{
         @include button(#97A6E6);
+
     }
     .textarea-wrapper{
         position: relative;

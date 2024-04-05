@@ -6304,8 +6304,9 @@ nav .back-btn-desk {
 }
 nav .back-btn-mobile {
   display: block;
+  width: auto;
   border-bottom: 1px solid rgb(187, 239, 74);
-  padding: 6px 0;
+  padding: 6px 4px;
   margin-left: 40px;
 }
 @media (min-width: 1080px) {
@@ -6384,11 +6385,24 @@ nav .back-btn-mobile {
   width: 100%;
 }
 .valitation-screen .btn-grp-wrapper {
-  width: -moz-max-content;
-  width: max-content;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+@media (min-width: 1080px) {
+  .valitation-screen .btn-grp-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
 }
 .valitation-screen .run-btn {
+  width: 100%;
   font-size: 1rem;
   padding: 12px 24px;
   border-radius: 8px;
@@ -6400,6 +6414,7 @@ nav .back-btn-mobile {
   cursor: pointer;
 }
 .valitation-screen #accept-btn {
+  width: 100%;
   font-size: 1rem;
   padding: 12px 24px;
   border-radius: 8px;
@@ -6411,6 +6426,7 @@ nav .back-btn-mobile {
   cursor: pointer;
 }
 .valitation-screen #keep-btn {
+  width: 100%;
   font-size: 1rem;
   padding: 12px 24px;
   border-radius: 8px;
@@ -6422,6 +6438,7 @@ nav .back-btn-mobile {
   cursor: pointer;
 }
 .valitation-screen #retry-btn {
+  width: 100%;
   font-size: 1rem;
   padding: 12px 24px;
   border-radius: 8px;
@@ -6568,6 +6585,7 @@ nav .back-btn-mobile {
   align-items: center;
 }
 .main-screen #translate-btn, .main-screen #new-input-btn {
+  width: 100%;
   width: 100%;
   font-size: 1rem;
   padding: 12px 24px;
