@@ -19,11 +19,14 @@ $nav-link-padding-y: 0.5rem;
 @import "./variables";
 @import "./mixins";
 
+@include google-font('Inter', 200);
+@include google-font('Krona One', 400);
+
 %heading-styles {
     padding: 0px 40px;
     font-size: $heading-font-size;
     color: $text-color;
-    font-weight: 300;
+    font-weight: 400;
     font-family: $heading-font;
     line-height: 1.87rem;
     
@@ -173,7 +176,7 @@ nav{
 
 }
 
-.valitation-screen {
+.validation-screen {
     @include flexbox(column, center , center );
     @extend %wrapper-width-styles;
     margin: 0px auto;

@@ -7,16 +7,8 @@ $input-bg-light: rgba(217,217,217,1);
 $accent-color: rgba(187,239,74,1);
 $subtext-color: rgba(135, 135, 135, 1);
 
-// language colours
-// $html: #C4501E;
-// $css: #4577EB;
-// $js: #F0DB4F;
-// $php: #333A63;
-// $python: #FFD342;
-// $cplus: #00599C;
-
-@mixin google-font($family, $weight: 400) {
-    @import url("http://fonts.googleapis.com/css2?family=#{$family}:wght@#{$weight}&display=swap");
+@mixin google-font($family, $weight) {
+    @import url("https://fonts.googleapis.com/css2?family=#{$family}:wght@#{$weight}&display=swap");
 }
 
 $title-font: 'Krona One', sans-serif;
@@ -28,5 +20,3 @@ $button-font-size: 1rem;
 $body-font-size: 1rem;
 $heading-font-size: 0.75rem;
 $dropdown-font-size: 1rem;
-
-$border: 1px solid red;

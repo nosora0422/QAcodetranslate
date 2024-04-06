@@ -120,18 +120,6 @@ body {
         margin: $slide-margin;
         font-size: 20px;
         font-family: $body-font;
-        font-weight: 100;
-
-        // @each $slide, $colour in $lang-colours {
-        //     .#{$slide} {
-        //       background-color: $colour;
-        //     }
-        // }
-
-        // .circle {
-        //     @include heightWidth(60px, 60px, 60px);
-        //     // background-color: white;
-        // }
 	}
 }
 
@@ -236,6 +224,7 @@ body {
         a {
             color: $text-color;
             letter-spacing: 0.1rem;
+            text-decoration: underline;
         }
 
         & > * {

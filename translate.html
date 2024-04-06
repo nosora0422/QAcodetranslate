@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cypher</title>
+    <link rel="icon" type="image/png" href="img/cypher-logo.png" />
+    <link rel="stylesheet" href="dist/css/main.css">
+    <script src="https://kit.fontawesome.com/1a72bf9d1c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav>
+        <a href="./index.html">
+            <img class="logo-img" src="img/cypher-logo.png" alt="cypher-logo">
+        </a>
+        <p class="title">Cypher</p>
+        <div class="back-btn-desk">
+            <a class="back-btn" href="./index.html">Back to home</a>
+        </div>
+        <a href="./index.html" class="back-btn-mobile">
+            <i class="fa-solid fa-house"></i>
+        </a>
+    </nav>
+    <div class="container">
+        <div class="validation-screen">
+            <div class="modal-inner-wrapper">
+                <h1>Translator</h1>
+                <h2>Cypher helps you identify errors and convert your code into whatever language will help move your
+                    projects forward.</h1>
+                    <div class="textarea-wrapper">
+                        <div class="spinner-screen" id="spinner-screen1">
+                            <p>Checking code for any errors...</p>
+                            <div class="spinner-wrapper">
+                                <div class="spinner-grow" role="status"></div>
+                                <div class="spinner-grow" role="status"></div>
+                                <div class="spinner-grow" role="status"></div>
+                            </div>
+                        </div>
+                        <textarea class="textBox" id='initial-input' type="text" placeholder="Please enter message"
+                            required></textarea>
+                    </div>
+                    <div class="validation-btn-wrap" id="validation-btn-wrap">
+                        <div class="dropdown-wrapper">
+                            <select class="dropdown" id="user-language">
+                                <option value="" disabled selected>Translate to</option>
+                                <option value="HTML5">HTML5</option>
+                                <option value="CSS3">CSS3</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Java">Java</option>
+                                <option value="PHP">PHP</option>
+                                <option value="Tailwind">Tailwind</option>
+                                <option value="SASS">SASS</option>
+                                <option value="Bootstrap">Bootstrap</option>
+                            </select>
+                            <button class="run-btn" id="validation-btn">Run<i
+                                    class="icon fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="btn-grp" id="btn-grp">
+                        <div class="btn-grp-wrapper">
+                            <button id="accept-btn">Accept Corrections</button>
+                            <button id="keep-btn">Continue Uncorrected</button>
+                            <button id="retry-btn">Retry</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="main-screen">
+            <div class="grid">
+                <div class="inner-wrapper col-12 col-5-lg">
+                    <div class="textBox">
+                        <div class="lang-display">
+                            <p>Translate from:</p>
+                            <p id="input-lang"></p>
+                        </div>
+                        <textarea id='validatedInput' type="text" readonly></textarea>
+                    </div>
+                    <button id="new-input-btn">Try New Input</button>
+                </div>
+                <div class="inner-wrapper col-12 col-2-lg">
+                    <div class="spinner-screen" id="spinner-screen2">
+                        <p>Translating...</p>
+                        <div class="spinner-wrapper">
+                            <div class="spinner-grow" role="status"></div>
+                            <div class="spinner-grow" role="status"></div>
+                            <div class="spinner-grow" role="status"></div>
+                        </div>
+                    </div>
+                    <div id="confirm-img">
+                        <p>Translation complete</p>
+                        <img src="img/check-round.svg" alt="check-confirmed-icon">
+                    </div>
+                </div>
+                <div class="inner-wrapper col-12 col-5-lg">
+                    <div class="textBox" id="chat-card-item">
+                        <div class="lang-display">
+                            <p>Translate to:</p>
+                            <p id="output-lang"></p>
+                        </div>
+                        <div id="output"></div>
+                    </div>
+                    <div class="dropdown-wrapper">
+                        <select class="dropdown" id="another-language">
+                            <option value="" disabled selected>Choose another language</option>
+                            <option value="HTML5">HTML5</option>
+                            <option value="CSS3">CSS3</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="Java">Java</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Tailwind">Tailwind</option>
+                            <option value="SASS">SASS</option>
+                            <option value="Bootstrap">Bootstrap</option>
+                        </select>
+                        <button id="translate-btn">Run<i class="icon fa-solid fa-arrow-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <footer>MDIA-QA-Final Project</footer>
+    <script type="module" src="js/chat-gpt.js"></script>
+</body>
+
+</html>

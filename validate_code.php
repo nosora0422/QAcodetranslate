@@ -67,13 +67,6 @@ $promises = [
 // Wait for all promises to complete
 $responses = Promise\Utils::settle($promises)->wait();
 
-// function dd($ob) {
-//     echo "<pre>" . print_r($ob, true) . "</pre>";
-//     die();
-// }
-
-// dd($responses['langResponse']['value']->getBody()->getContents());
-
 // Handle responses
 $langResponse = $responses['langResponse']['value'];
 $errorResponse = $responses['errorResponse']['value'];

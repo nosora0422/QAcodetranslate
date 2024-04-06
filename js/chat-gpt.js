@@ -9,7 +9,7 @@ const valInput = document.querySelector("#initial-input");
 
 const runBtnWrap = document.querySelector('#validation-btn-wrap');
 const btnWrap = document.querySelector('#btn-grp');
-const modal = document.querySelector('.valitation-screen');
+const modal = document.querySelector('.validation-screen');
 
 let firstOption;
 let originalInput;
@@ -22,10 +22,9 @@ btnWrap.style.display = 'none';
 
 
 const runBtn = document.querySelector('#validation-btn');
-runBtn.addEventListener('click', function() {
+runBtn.addEventListener('click', function () {
     originalInput = valInput.value;
     getValidate(valInput.value);
-    // console.log(valInput.value);
 });
 
 
@@ -34,7 +33,7 @@ acceptBtn.addEventListener('click', () => {
     modal.style.display = 'none';
     inputContent.value = valInput.value;
     mainScreen.style.display = 'flex';
-    getMessage(firstOption,inputContent.value);
+    getMessage(firstOption, inputContent.value);
 });
 
 const keepBtn = document.querySelector('#keep-btn');
@@ -77,21 +76,19 @@ translateBtn.addEventListener('click', () => {
 
 
 
-/**** change fetch uri to your domain (http://yourdomain.com/validate_code.php) ********/
+/**** change fetch uri to your domain (https://yourdomain.com/validate_code.php) ********/
 async function getValidate(value) {
     const spinner = document.querySelector('#spinner-screen1');
     spinner.style.display = 'flex';
 
     try {
-        const response = await fetch('http://cypher.sarahnoh.ca/validate_code.php',{
+        const response = await fetch('https://cypher.leeorburton.com/validate_code.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({ userinput: value }) // Include userinput in the request body
         });
-
-        // console.log(valInput);
 
         const data = await response.json();
 
@@ -123,14 +120,14 @@ async function getValidate(value) {
 
     } catch (error) {
         console.log('Error:', error);
-       
+
     } finally {
         spinner.style.display = 'none';
     }
 }
 
 
-/**** change fetch uri to your domain (http://yourdomain.com/validate_code.php) ********/
+/**** change fetch uri to your domain (https://yourdomain.com/validate_code.php) ********/
 async function getMessage(language, value) {
     const confirmImg = document.querySelector('#confirm-img');
     confirmImg.style.display = 'none';
@@ -141,7 +138,7 @@ async function getMessage(language, value) {
     console.log('translation-clicked');
 
     try {
-        const response = await fetch('http://cypher.sarahnoh.ca/get_message.php',{
+        const response = await fetch('https://cypher.leeorburton.com/get_message.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -149,14 +146,14 @@ async function getMessage(language, value) {
             body: JSON.stringify({ firstOption: language, userinput: value })
         });
         const data = await response.json();
-        
+
         output.textContent = data.choices[0].message.content;
         outputLang.textContent = firstOption;
         if (data.choices[0].message.content && inputContent.value) {
             const pElement = document.createElement('p');
             pElement.textContent = output.value;
             confirmImg.style.display = 'flex';
-            
+
             console.log(output);
         }
     } catch (error) {
