@@ -94,8 +94,10 @@ textarea{
         font-size: $dropdown-font-size;
         padding: 12px;
         border-radius: 8px;
+        color: #000 !important;
     }
     button{
+        color: #000 !important;
         grid-column: span 12;
     }
 

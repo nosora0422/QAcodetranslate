@@ -6259,8 +6259,10 @@ body {
   font-size: 1rem;
   padding: 12px;
   border-radius: 8px;
+  color: #000 !important;
 }
 .dropdown-wrapper button {
+  color: #000 !important;
   grid-column: span 12;
 }
 @media (min-width: 568px) {
